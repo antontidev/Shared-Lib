@@ -10,6 +10,8 @@ public abstract class AudioEvent : ScriptableObject {
 
     public abstract void Play(AudioSource source);
 
+    public abstract void PlayEveryTimes(AudioSource source, int times);
+
     public void Stop(AudioSource source) {
         source.Stop();
     }

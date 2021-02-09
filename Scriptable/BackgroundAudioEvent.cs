@@ -22,5 +22,9 @@ namespace Assets.Scripts.Scriptable {
             source.loop = true;
             source.Play();
         }
+
+        public override void PlayEveryTimes(AudioSource source, int times) {
+            throw new System.NotImplementedException();
+        }
     }
 }

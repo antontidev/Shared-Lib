@@ -3,6 +3,8 @@ using Random = UnityEngine.Random;
 
 [CreateAssetMenu(menuName = "AudioEvent/Simple")]
 public class SimpleAudioEvent : AudioEvent {
+    private int _times = 0;
+
     public override void Play(AudioSource source) {
         if (clips.Length == 0)
             return;
@@ -13,5 +15,13 @@ public class SimpleAudioEvent : AudioEvent {
         source.pitch = Random.Range(pitch.min, pitch.max);
 
         source.Play();
+    }
+
+    public override void PlayEveryTimes(AudioSource source, int times) {
+        _times++;
+
+        if (_times % times == 0) {
+            Play(source);
+        }
     }
 }
